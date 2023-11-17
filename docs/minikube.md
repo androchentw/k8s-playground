@@ -122,6 +122,57 @@ spec:
 status: {}
 ```
 
+### Create a LoadBalancer
+
+We used:
+
+* `kubectl expose --type=NodePort`
+* `minikube service`
+* `kubectl port-forward`
+
+in the previous section. Now let's try
+
+* `kubectl expose --type=LoadBalancer`
+* `minikube tunnel`
+
+```sh
+kubectl create deployment balanced --image=kicbase/echo-server:1.0
+kubectl expose deployment balanced --type=LoadBalancer --port=8080
+minikube tunnel
+# To find the routable IP, run this command and examine the EXTERNAL-IP column:
+kubectl get services balanced
+# Your deployment is now available at http://127.0.0.1:8080
+```
+
+`kubectl create deployment balanced --image=kicbase/echo-server:1.0 --dry-run=client --output=yaml`
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: balanced
+  name: balanced
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: balanced
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: balanced
+    spec:
+      containers:
+      - image: kicbase/echo-server:1.0
+        name: echo-server
+        resources: {}
+status: {}
+```
+
 ### Enable ingress addon
 
 ```sh
@@ -132,17 +183,6 @@ kubectl get ingress
 minikube tunnel 
 curl 127.0.0.1/foo
 curl 127.0.0.1/bar
-```
-
-### Create a LoadBalancer
-
-```sh
-kubectl create deployment balanced --image=kicbase/echo-server:1.0
-kubectl expose deployment balanced --type=LoadBalancer --port=8080
-minikube tunnel
-# To find the routable IP, run this command and examine the EXTERNAL-IP column:
-kubectl get services balanced
-# Your deployment is now available at <EXTERNAL-IP>:8080
 ```
 
 ## Another Tutorial - Hello Minikube
