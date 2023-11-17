@@ -46,6 +46,16 @@ cat ~/.kube/config
 minikube addons list
 ```
 
+You can also check Docker Desktop for more information, like ports opened:
+
+```text
+51226:22⁠
+51227:2376⁠
+51228:32443⁠
+51229:5000⁠
+51225:8443⁠
+```
+
 ## Deploy applications: hello-minikube
 
 [minikube start - Deploy applications](https://minikube.sigs.k8s.io/docs/start/)
@@ -173,16 +183,74 @@ spec:
 status: {}
 ```
 
-### Enable ingress addon
+### Enable Ingress Addon
 
 ```sh
 minikube addons enable ingress
+# 💡  ingress is an addon maintained by Kubernetes. For any concerns contact minikube on GitHub.
+# You can view the list of minikube maintainers at: https://github.com/kubernetes/minikube/blob/master/OWNERS
+# 💡  After the addon is enabled, please run "minikube tunnel" and your ingress resources would be available at "127.0.0.1"
+# 🔎  Verifying ingress addon...
+# 🌟  The 'ingress' addon is enabled
+
 kubectl apply -f https://storage.googleapis.com/minikube-site-examples/ingress-example.yaml
+# pod/foo-app created
+# service/foo-service created
+# pod/bar-app created
+# service/bar-service created
+# ingress.networking.k8s.io/example-ingress created
+
 kubectl get ingress
+# NAME              CLASS   HOSTS   ADDRESS        PORTS   AGE
+# example-ingress   nginx   *       192.168.49.2   80      2m24s
+
 # open a new terminal window and run 
 minikube tunnel 
+# ✅  Tunnel successfully started
+# 📌  NOTE: Please do not close this terminal as this process must stay alive for the tunnel to be accessible ...
+# 🏃  Starting tunnel for service balanced.
+# ❗  The service/ingress example-ingress requires privileged ports to be exposed: [80 443]
+# 🔑  sudo permission will be asked for it.
+# 🏃  Starting tunnel for service example-ingress.
+
 curl 127.0.0.1/foo
+# Request served by foo-app
+# HTTP/1.1 GET /foo
+# Host: 127.0.0.1
+# Accept: */*
+# User-Agent: curl/8.1.2
+# X-Forwarded-For: 10.244.0.1
+# X-Forwarded-Host: 127.0.0.1
+# X-Forwarded-Port: 80
+# X-Forwarded-Proto: http
+# X-Forwarded-Scheme: http
+# X-Real-Ip: 10.244.0.1
+# X-Request-Id: c59d9ad90253f624abe25c5ec515343c
+# X-Scheme: http
+
 curl 127.0.0.1/bar
+# Request served by bar-app
+# HTTP/1.1 GET /bar
+# Host: 127.0.0.1
+# Accept: */*
+# User-Agent: curl/8.1.2
+# X-Forwarded-For: 10.244.0.1
+# X-Forwarded-Host: 127.0.0.1
+# X-Forwarded-Port: 80
+# X-Forwarded-Proto: http
+# X-Forwarded-Scheme: http
+# X-Real-Ip: 10.244.0.1
+# X-Request-Id: 11b71a0d69ea7e334cc973650125601e
+# X-Scheme: http
+```
+
+* Note for Docker Desktop Users: To get ingress to work you'll need to open a new terminal window and run minikube tunnel and in the following step use 127.0.0.1 in place of <ip_from_above>.
+
+Then, you could halt the cluster with the following command:
+
+```sh
+minikube pause
+minikube stop
 ```
 
 ## Another Tutorial - Hello Minikube
