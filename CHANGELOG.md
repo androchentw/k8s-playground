@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 
-## [1.0.0] - 2023-04-14
+## [0.1.0] - 2023-11-18
 
 ### Added
 
@@ -11,4 +11,4 @@
 <!-- Links -->
 
 <!-- Versions -->
-[1.0.0]: https://github.com/androchentw/template-playground/releases/tag/v1.0.0
+[0.1.0]: https://github.com/androchentw/template-playground/releases/tag/v0.1.0
