@@ -71,6 +71,7 @@ kubectl -n argocd delete secret argocd-initial-admin-secret
 ## Deploying a Sample App
 
 * Check [src/nginx-helloworld/](../src/nginx-helloworld/)
+  * [Run a Stateless Application Using a Deployment](https://kubernetes.io/docs/tasks/run-application/run-stateless-application-deployment/)
 * Settings > Repositories > Connect Repo > VIA HTTPS
   * Project: default
   * URL: <https://github.com/androchentw/k8s-playground>
@@ -105,6 +106,30 @@ spec:
       prune: false
       selfHeal: false
 ```
+
+Check status on ArgoCD UI, kubernetes-dashboard UI and `kubectl`
+
+```sh
+kubectl get all -n helloworld
+# NAME                                    READY   STATUS    RESTARTS   AGE
+# pod/nginx-deployment-7c79c4bf97-2kwwp   1/1     Running   0          8h
+
+# NAME                    TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
+# service/nginx-service   ClusterIP   10.103.202.41   <none>        80/TCP    8h
+
+# NAME                               READY   UP-TO-DATE   AVAILABLE   AGE
+# deployment.apps/nginx-deployment   1/1     1            1           8h
+
+# NAME                                          DESIRED   CURRENT   READY   AGE
+# replicaset.apps/nginx-deployment-7c79c4bf97   1         1         1       8h
+
+kubectl describe deployment nginx-deployment -n helloworld
+kubectl describe pod nginx-deployment-7c79c4bf97-2kwwp -n helloworld
+```
+
+Ref:
+
+* [使用 Argo CD 在 K8s 上實作持續佈署](https://docfunc.com/posts/100/使用-argo-cd-在-k8s-上實作持續佈署-post)
 
 ## User Management
 

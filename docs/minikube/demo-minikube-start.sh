@@ -36,10 +36,10 @@ function create_service() {
   kubectl expose deployment hello-minikube --type=NodePort --port=8080
   kubectl get services hello-minikube
   minikube service hello-minikube
-  curl http://127.0.0.1:51666/
+  curl -v http://127.0.0.1:51666/
 
   kubectl port-forward service/hello-minikube 7080:8080 
-  curl http://localhost:7080/
+  curl -v http://localhost:7080/
 
   kubectl delete service hello-minikube
   kubectl delete deployment hello-minikube
@@ -50,7 +50,7 @@ function create_load_balancer() {
   kubectl expose deployment balanced --type=LoadBalancer --port=8080
   minikube tunnel
   kubectl get services balanced
-  curl http://127.0.0.1:8080
+  curl -v http://127.0.0.1:8080
 
   kubectl delete service balanced
   kubectl delete deployment balanced
@@ -61,8 +61,8 @@ function enable_ingress_addon() {
   kubectl apply -f https://storage.googleapis.com/minikube-site-examples/ingress-example.yaml
   kubectl get ingress
   minikube tunnel 
-  curl 127.0.0.1/foo
-  curl 127.0.0.1/bar
+  curl -v 127.0.0.1/foo
+  curl -v 127.0.0.1/bar
 
   kubectl delete -f https://storage.googleapis.com/minikube-site-examples/ingress-example.yaml
 }

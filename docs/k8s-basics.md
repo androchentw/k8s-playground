@@ -76,6 +76,7 @@ Ref:
   * ClusterIP, NodePort, LoadBalancer, ExternalName
 * 定義「一群 Pod 要如何被連線及存取」的元件
 * Pod 可以透過 `kubectl port-forward` 的指令 host 到本機上，但只能在前景執行，而且每個 pod 都要去執行一次也不太好管理，所以 Service 這個元件就誕生了，Service 主要可以想成是 Pod 的反代理機制，用來定義 Pod 如何被連線以及存取
+* [Kubernetes Service Overview](https://godleon.github.io/blog/Kubernetes/k8s-Service-Overview/)
 
 ### Deployment
 
