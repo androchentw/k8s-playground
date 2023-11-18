@@ -4,17 +4,17 @@
 
 ## Basics: Pod, Worker Node, Master Node, Cluster
 
-<img style="width:80%;" src="https://kubernetes.io/docs/tutorials/kubernetes-basics/public/images/module_03_nodes.svg">
+<img style="width:50%;" src="https://kubernetes.io/docs/tutorials/kubernetes-basics/public/images/module_03_nodes.svg">
 <p align="center"><sub><sup>
   <a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/" target="_blank" rel="noreferrer noopenner">k8s tutorial - Node Overivew</a>
 </sup></sub></p>
 
-<img style="width:80%;" src="https://kubernetes.io/docs/tutorials/kubernetes-basics/public/images/module_03_pods.svg">
+<img style="width:50%;" src="https://kubernetes.io/docs/tutorials/kubernetes-basics/public/images/module_03_pods.svg">
 <p align="center"><sub><sup>
   <a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/" target="_blank" rel="noreferrer noopenner">k8s tutorial - Pods Overivew</a>
 </sup></sub></p>
 
-<img style="width:80%;" src="https://4.bp.blogspot.com/-EwaeByngT_s/VreBpWmU5bI/AAAAAAAABrU/TOd81z-L1rY/s1600/archi.jpg">
+<img style="width:60%;" src="https://4.bp.blogspot.com/-EwaeByngT_s/VreBpWmU5bI/AAAAAAAABrU/TOd81z-L1rY/s1600/archi.jpg">
 <p align="center"><sub><sup>
   <a href="https://nishadikirielle.blogspot.com/2016/02/kubernetes-at-first-glance.html" target="_blank" rel="noreferrer noopenner">Kubernetes, At A First Glance - k8s Architecture</a>
 </sup></sub></p>
@@ -50,7 +50,7 @@ Ref:
 
 ## Advanced: Service, Deployment, Ingress
 
-<img style="width:80%;" src="https://kubernetes.io/docs/tutorials/kubernetes-basics/public/images/module_04_labels.svg">
+<img style="width:60%;" src="https://kubernetes.io/docs/tutorials/kubernetes-basics/public/images/module_04_labels.svg">
 <p align="center"><sub><sup>
   <a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/" target="_blank" rel="noreferrer noopenner">k8s tutorial - Using a Service to Expose Your App</a>
 </sup></sub></p>
