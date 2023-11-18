@@ -10,7 +10,7 @@
 
 ## Objectives
 
-1. [Minikube on MacOS M2](docs/minikube.md)
+1. [Minikube on MacOS M2](docs/minikube/minikube.md)
 2. [GitOps: ArgoCD](docs/argocd.md)
 3. [Observability: Grafana + Prometheus + Loki + Jaegar](docs/observability.md)
 4. [Secret Management: External Secrets Operator + HashiCorp Vault](docs/secret-management.md)

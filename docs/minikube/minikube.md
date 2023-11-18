@@ -4,7 +4,7 @@ Minikube on MacOS M2 + zsh
 
 ## Setup minikube
 
-The concise version of command is aggregated at [demo-minikube-start.sh](demo-minikube-start.sh)
+The concise version of command is aggregated at [demo-minikube-start.sh](minikube/demo-minikube-start.sh)
 
 * [minikube start](https://minikube.sigs.k8s.io/docs/start/)
 * [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
@@ -110,7 +110,7 @@ kubectl port-forward service/hello-minikube 7080:8080
 
 You can also check `minikube dashboard` GUI for a better overview on the minikube cluster and hello-minikube deployments.
 
-Use the following to generate a yaml template:
+Use the following to generate a [hello-minikube-deployment.yaml](hello-minikube-deployment.yaml) template:
 
 `kubectl create deployment hello-minikube --image=kicbase/echo-server:1.0 --dry-run=client --output=yaml`
 
@@ -164,6 +164,8 @@ minikube tunnel
 kubectl get services balanced
 # Your deployment is now available at http://127.0.0.1:8080
 ```
+
+Use the following to generate a [balanced-deployment.yaml](balanced-deployment.yaml) template:
 
 `kubectl create deployment balanced --image=kicbase/echo-server:1.0 --dry-run=client --output=yaml`
 

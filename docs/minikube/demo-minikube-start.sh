@@ -1,5 +1,5 @@
 #!/bin/bash
-# command used of docs/minikube.md
+# command used of docs/minikube/minikube.md
 
 function setup() {
   brew install --cask docker
@@ -24,7 +24,7 @@ function exec_minikube() {
   minikube addons list
 }
 
-function stop_minikube() {
+function delete_minikube() {
   minikube stop
   minikube delete
 }
@@ -73,7 +73,7 @@ function main() {
   create_service
   create_load_balancer
   enable_ingress_addon
-  stop_minikube
+  remove_minikube
 }
 
 main
