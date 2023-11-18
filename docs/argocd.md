@@ -78,7 +78,7 @@ kubectl -n argocd delete secret argocd-initial-admin-secret
 * Save > Hamburger menu > Create application
   * Project: default
   * Name: k8s-playground
-  * Sync Policy: Automatic
+  * Sync Policy: None
   * path: src/nginx-helloworld     (resource files path in repo)
   * Cluster URL: <https://kubernetes.default.svc>
   * Namespace: helloworld
@@ -101,10 +101,6 @@ spec:
     targetRevision: HEAD
   sources: []
   project: default
-  syncPolicy:
-    automated:
-      prune: false
-      selfHeal: false
 ```
 
 Check status on ArgoCD UI, kubernetes-dashboard UI and `kubectl`
@@ -112,19 +108,35 @@ Check status on ArgoCD UI, kubernetes-dashboard UI and `kubectl`
 ```sh
 kubectl get all -n helloworld
 # NAME                                    READY   STATUS    RESTARTS   AGE
-# pod/nginx-deployment-7c79c4bf97-2kwwp   1/1     Running   0          8h
+# pod/nginx-deployment-7c79c4bf97-2kwwp   1/1     Running   0          9h
+# pod/nginx-deployment-7c79c4bf97-dg8g2   1/1     Running   0          24m
 
-# NAME                    TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
-# service/nginx-service   ClusterIP   10.103.202.41   <none>        80/TCP    8h
+# NAME                    TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+# service/nginx-service   NodePort   10.103.202.41   <none>        80:30080/TCP   9h
 
 # NAME                               READY   UP-TO-DATE   AVAILABLE   AGE
-# deployment.apps/nginx-deployment   1/1     1            1           8h
+# deployment.apps/nginx-deployment   2/2     2            2           9h
 
 # NAME                                          DESIRED   CURRENT   READY   AGE
-# replicaset.apps/nginx-deployment-7c79c4bf97   1         1         1       8h
+# replicaset.apps/nginx-deployment-7c79c4bf97   2         2         2       9h
 
 kubectl describe deployment nginx-deployment -n helloworld
 kubectl describe pod nginx-deployment-7c79c4bf97-2kwwp -n helloworld
+
+# minikube ip
+# 192.168.49.2
+minikube service nginx-service -n helloworld
+# |------------|---------------|-------------|---------------------------|
+# | NAMESPACE  |     NAME      | TARGET PORT |            URL            |
+# |------------|---------------|-------------|---------------------------|
+# | helloworld | nginx-service | http/80     | http://192.168.49.2:30080 |
+# |------------|---------------|-------------|---------------------------|
+# 🏃  Starting tunnel for service nginx-service.
+# |------------|---------------|-------------|------------------------|
+# | NAMESPACE  |     NAME      | TARGET PORT |          URL           |
+# |------------|---------------|-------------|------------------------|
+# | helloworld | nginx-service |             | http://127.0.0.1:49204 |
+# |------------|---------------|-------------|------------------------|
 ```
 
 Ref:
