@@ -7,6 +7,7 @@ Ref
 * [ArgoCD - Overview](https://argo-cd.readthedocs.io/en/stable/)
 * [Installing ArgoCD on Minikube and deploying a test application](https://medium.com/@mehmetodabashi/installing-argocd-on-minikube-and-deploying-a-test-application-caa68ec55fbf)
 * [Setting up Argo CD with Helm](https://www.arthurkoziel.com/setting-up-argocd-with-helm/)
+* [GitOps (ArgoCD)](https://picluster.ricsanfre.com/docs/argocd/)
 
 ## Introduction
 
@@ -93,7 +94,7 @@ spec:
     namespace: ''
     server: 'https://kubernetes.default.svc'
   source:
-    path: src/fastapi-helloworld
+    path: src/nginx-helloworld
     repoURL: 'https://github.com/androchentw/k8s-playground'
     targetRevision: HEAD
   sources: []
