@@ -1,10 +1,11 @@
 # Minikube
 
-Minikube on MacOS M2 + zsh
+Minikube on MacOS M2 + zsh.
+Ref [k8s-basics.md](../k8s-basics.md) for details.
 
 ## Setup minikube
 
-The concise version of command is aggregated at [demo-minikube-start.sh](minikube/demo-minikube-start.sh)
+The concise version of command is aggregated at [demo-minikube-start.sh](demo-minikube-start.sh)
 
 * [minikube start](https://minikube.sigs.k8s.io/docs/start/)
 * [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
@@ -287,6 +288,24 @@ minikube pause
 minikube stop
 
 minikube delete  # Optional, deletes the whole cluster
+```
+
+### kubectl resource control cheatsheet
+
+```sh
+# check
+kubectl get <resource>
+kubectl describe <resource> <resource-name>
+# create
+kucectl create <resource> ...
+kubectl create -f <config-yaml>
+kubectl apply -f ./
+# modify
+kubectl edit <resource> <resource-name>
+kubectl delete <resource> <resource-name>
+# all
+kubectl get all
+kubectl delete all --all
 ```
 
 ## Another Tutorial - Hello Minikube
