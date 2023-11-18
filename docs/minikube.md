@@ -4,6 +4,8 @@ Minikube on MacOS M2 + zsh
 
 ## Setup minikube
 
+The concise version of command is aggregated at [demo-minikube-start.sh](demo-minikube-start.sh)
+
 * [minikube start](https://minikube.sigs.k8s.io/docs/start/)
 * [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 * [Startup Local Kubernetes via Minikube](https://fufu.gitbook.io/kk8s/startup-kubernetes-via-minikube)
@@ -141,16 +143,18 @@ status: {}
 
 ### Create a LoadBalancer
 
-We used:
+We used the following in the previous section:
 
 * `kubectl expose --type=NodePort`
 * `minikube service`
 * `kubectl port-forward`
 
-in the previous section. Now let's try
+Now let's try:
 
 * `kubectl expose --type=LoadBalancer`
 * `minikube tunnel`
+
+ref: [minikube > Handbook / Accessing apps](https://minikube.sigs.k8s.io/docs/handbook/accessing/)
 
 ```sh
 kubectl create deployment balanced --image=kicbase/echo-server:1.0
@@ -260,7 +264,6 @@ curl 127.0.0.1/bar
 ```sh
 minikube service list   # list all services. -n <namespace>
 minikube service --all  # Forwards all services in a namespace (defaults to "false")
-kubectl get deploy
 ```
 
 You could cleanup with the following command:
@@ -270,10 +273,10 @@ kubectl get services
 kubectl get deploy
 
 # for kubectl create deployment, revert it by
-kubectl delete service balanced
-kubectl delete deployment balanced
 kubectl delete service hello-minikube
 kubectl delete deployment hello-minikube
+kubectl delete service balanced
+kubectl delete deployment balanced
 
 # for kubectl apply -f <filename>, revert it by:
 kubectl delete -f https://storage.googleapis.com/minikube-site-examples/ingress-example.yaml

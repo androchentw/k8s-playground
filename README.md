@@ -25,7 +25,7 @@
 
 ## k8s bootstrap
 
-* <https://github.com/hivenetes/k8s-bootstrapper/tree/main>
+* <https://github.com/hivenetes/k8s-bootstrapper>
 
 ## Contribute
 
