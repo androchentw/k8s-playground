@@ -2,7 +2,7 @@
 
 * [Tutorial: Learn Kubernetes Basics](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
 
-## Basics: Pod, Worker Node, Master Node, Cluster
+## Basics: Cluster, Master Node, Worker Node, Pod
 
 <img style="width:50%;" src="https://kubernetes.io/docs/tutorials/kubernetes-basics/public/images/module_03_nodes.svg">
 <p align="center"><sub><sup>
@@ -19,13 +19,28 @@
   <a href="https://nishadikirielle.blogspot.com/2016/02/kubernetes-at-first-glance.html" target="_blank" rel="noreferrer noopenner">Kubernetes, At A First Glance - k8s Architecture</a>
 </sup></sub></p>
 
-* Cluster: 管理多個 Master, Worker Node，可以理解為多個 VM 如何變為一個「大 VM」的方式
-* Master Node: 實際的 VM，K8s 會由一個 Master Node 去管理底下多個 Worker Node
-* Worker Node: 實際的 VM，裡頭管理著一個一個 Pod
-* Pod: Pod 裡放著容器，容器通常為一個，但也可以多個
-  * 針對單一 Pod 的設定，是用來建立獨立的 Pod，但多數我們不會這樣單獨使用，主要有幾個問題:
-    * 獨立的 pod 若是發生問題時(例如: node failure)，k8s 不會協助恢復其正常的狀態
-    * 若 pod 所在的 worker node 因為資源不足或是進入維護狀態時，pod 不會被自動移到其他正常的 node 並重新啟動
+### Cluster
+
+* Kubernetes 中多個 Node 與 Master 的集合，管理多個 Master, Worker Node，。基本上可以想成在同一個環境裡所有 Node 集合在一起的單位。
+
+### Master Node
+
+* Kubernetes 運作的指揮中心，可以簡化看成一個特化的 Node 負責管理所有其他 Node。
+* 包含 kube-apiserver、etcd、kube-scheduler、kube-controller-manager。
+
+### Worker Node
+
+* Kubernetes 運作的最小硬體單位，一個 Worker Node（簡稱 Node）對應到一台機器，可以是實體機如你的筆電、或是虛擬機如 AWS 上的一台 EC2 或 GCP 上的一台 Computer Engine。
+* 包含 kubelet、kube-proxy、Container Runtime
+
+### Pod
+
+* Kubernetes 運作的最小單位，一個 Pod 對應到一個應用服務（Application），舉例來說一個 Pod 可能會對應到一個 API Server。
+* 一個 Pod 裡面可以有一個或是多個 Container，但一般情況一個 Pod 最好只有一個 Container
+* 同一個 Pod 中的 Containers 共享相同資源及網路，彼此透過 local port number 溝通
+* `pod.yaml` 是針對單一 Pod 的設定，用來建立獨立的 Pod，但多數我們不會這樣單獨使用，主要有幾個問題:
+  * 獨立的 pod 若是發生問題時(例如: node failure)，k8s 不會協助恢復其正常的狀態
+  * 若 pod 所在的 worker node 因為資源不足或是進入維護狀態時，pod 不會被自動移到其他正常的 node 並重新啟動
 
 [`deployment.yaml` spec](https://github.com/superj80820/2020-ithelp-contest/blob/master/DAY18/server-service.yaml)
 
@@ -55,7 +70,27 @@ Ref:
   <a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/" target="_blank" rel="noreferrer noopenner">k8s tutorial - Using a Service to Expose Your App</a>
 </sup></sub></p>
 
-Note: Service. Pod 可以透過 port-forward 的指令 host 到本機上，但只能在前景執行，而且每個 pod 都要去執行一次也不太好管理，所以 Service 這個元件就誕生了，Service 主要可以想成是 Pod 的反代理機制，用來定義 Pod 如何被連線以及存取
+### Service
+
+* Expose your pods for outside to reach
+  * ClusterIP, NodePort, LoadBalancer, ExternalName
+* 定義「一群 Pod 要如何被連線及存取」的元件
+* Pod 可以透過 `kubectl port-forward` 的指令 host 到本機上，但只能在前景執行，而且每個 pod 都要去執行一次也不太好管理，所以 Service 這個元件就誕生了，Service 主要可以想成是 Pod 的反代理機制，用來定義 Pod 如何被連線以及存取
+
+### Deployment
+
+* scale out pods
+* `spec.replicas`
+
+### Ingress
+
+<img style="width:60%;" src="https://chengweihu.com/static/0020e6bdf72babb7d4e153139d3f568f/2bef9/image-3.png">
+<p align="center"><sub><sup>
+  <a href="https://chengweihu.com/kubernetes-tutorial-2-service-deployment-ingress" target="_blank" rel="noreferrer noopenner">Kubernetes 基礎教學（二）實作範例：Pod、Service、Deployment、Ingress | Cheng-Wei Hu</a>
+</sup></sub></p>
+
+* Ingress controller + reverse proxy
+  * [What is the difference between an Ingress and a reverse proxy?](https://stackoverflow.com/questions/59709514/what-is-the-difference-between-an-ingress-and-a-reverse-proxy)
 
 Ref:
 
@@ -79,8 +114,39 @@ TODO Ref
 
 ## pvc: PersistentVolumeClaims
 
-## Helm
+## Helm Chart
 
-TODO Ref
+* package managment
 
-* <https://github.com/superj80820/2020-ithelp-contest/tree/master/DAY20>
+### Install
+
+* [Helm Quickstart Guide](https://helm.sh/docs/intro/quickstart/)
+
+```sh
+brew install kubernetes-helm
+```
+
+### Introduction
+
+`helm create helm-demo`
+
+```text
+.
+├── Chart.yaml    # Metadata
+├── charts        # SubCharts
+├── templates     # Components
+│   ├── deployment.yaml
+│   ├── ingress.yaml
+│   └── service.yaml
+└── values.yaml   # environment values
+```
+
+### Helm Chart Template Guide
+
+* [Helm Chart Template Guide](https://helm.sh/docs/chart_template_guide/getting_started/)
+* [Helm - Templating variables in values.yaml](https://stackoverflow.com/questions/55958507/helm-templating-variables-in-values-yaml)
+
+Ref
+
+* [Kubernetes 基礎教學（三）Helm 介紹與建立 Chart](https://chengweihu.com/kubernetes-tutorial-3-helm/)
+* [DAY20 — 利用 Helm 把 K8s 元件都包裝起來吧！](https://github.com/superj80820/2020-ithelp-contest/tree/master/DAY20)
