@@ -33,7 +33,10 @@ Ref:
   <a href="https://grafana.com/docs/loki/latest/get-started/components/" target="_blank" rel="noreferrer noopenner">Grafana Loki Components</a>
 </sup></sub></p>
 
+* [Install Grafana Loki with Helm](https://grafana.com/docs/loki/latest/setup/install/helm/)
+  * [Loki deployment modes](https://grafana.com/docs/loki/latest/get-started/deployment-modes/): Simple Scalable, Monolithic, Microservices
+  * [Configure storage](https://grafana.com/docs/loki/latest/setup/install/helm/configure-storage/): The scalable installation requires a managed object store such as AWS S3 or Google Cloud Storage or a self-hosted store such as Minio. The single binary installation can only use the filesystem for storage.
 * [Log Aggregation (Loki)](https://picluster.ricsanfre.com/docs/loki/)
 * [可觀測性宇宙的第二十三天 - Grafana Loki 實戰](https://ithelp.ithome.com.tw/articles/10336360)
 
-## Traces: Jaegar
+## Traces: Jaegar/Tempo

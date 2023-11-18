@@ -70,6 +70,7 @@ kubectl -n argocd delete secret argocd-initial-admin-secret
 
 ## Deploying a Sample App
 
+* Check [src/nginx-helloworld/](../src/nginx-helloworld/)
 * Settings > Repositories > Connect Repo > VIA HTTPS
   * Project: default
   * URL: <https://github.com/androchentw/k8s-playground>
@@ -104,6 +105,10 @@ spec:
       prune: false
       selfHeal: false
 ```
+
+## User Management
+
+* [User Management - Overview](https://argo-cd.readthedocs.io/en/stable/operator-manual/user-management/)
 
 Ref
 
