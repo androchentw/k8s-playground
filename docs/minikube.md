@@ -1,19 +1,26 @@
 # Minikube
 
-Minikube on MacOS M2
+Minikube on MacOS M2 + zsh
 
 ## Setup minikube
 
-[minikube start](https://minikube.sigs.k8s.io/docs/start/)
+* [minikube start](https://minikube.sigs.k8s.io/docs/start/)
+* [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+* [Startup Local Kubernetes via Minikube](https://fufu.gitbook.io/kk8s/startup-kubernetes-via-minikube)
+* [Macbook 開發環境設定大全](https://blog.androchen.tw/macbook-setup/)
 
 ```sh
 brew install --cask docker
 # open Docker Desktop > Settings > Advanced > Select "System"
 docker -v 
 
-# Setup minikube and kubectl
-brew install minikube kubectl
+brew install kubectl
 kubectl version --client
+source <(kubectl completion zsh)  # set up autocomplete in zsh into the current shell
+echo '[[ $commands[kubectl] ]] && source <(kubectl completion zsh)' >> ~/.zshrc # add autocomplete permanently to your zsh shell
+
+
+brew install minikube 
 
 minikube start
 # 😄  minikube v1.32.0 on Darwin 14.0 (arm64)
@@ -246,11 +253,35 @@ curl 127.0.0.1/bar
 
 * Note for Docker Desktop Users: To get ingress to work you'll need to open a new terminal window and run minikube tunnel and in the following step use 127.0.0.1 in place of <ip_from_above>.
 
-Then, you could halt the cluster with the following command:
+### Wrap up
+
+* [minikube command reference](https://minikube.sigs.k8s.io/docs/commands/)
 
 ```sh
+minikube service list   # list all services. -n <namespace>
+minikube service --all  # Forwards all services in a namespace (defaults to "false")
+kubectl get deploy
+```
+
+You could cleanup with the following command:
+
+```sh
+kubectl get services
+kubectl get deploy
+
+# for kubectl create deployment, revert it by
+kubectl delete service balanced
+kubectl delete deployment balanced
+kubectl delete service hello-minikube
+kubectl delete deployment hello-minikube
+
+# for kubectl apply -f <filename>, revert it by:
+kubectl delete -f https://storage.googleapis.com/minikube-site-examples/ingress-example.yaml
+
 minikube pause
 minikube stop
+
+minikube delete  # Optional, deletes the whole cluster
 ```
 
 ## Another Tutorial - Hello Minikube
