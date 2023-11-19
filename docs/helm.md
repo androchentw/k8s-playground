@@ -1,13 +1,14 @@
 # Helm
 
-* package managment
+* Helm is the package manager for Kubernetes
 
 ## Install
 
 * [Helm Quickstart Guide](https://helm.sh/docs/intro/quickstart/)
+* [Helm Cheat Sheet](https://helm.sh/docs/intro/cheatsheet/)
 
 ```sh
-brew install kubernetes-helm
+brew install helm
 ```
 
 ## Introduction
@@ -15,14 +16,13 @@ brew install kubernetes-helm
 `helm create helm-demo`
 
 ```text
-.
-├── Chart.yaml    # Metadata
-├── charts        # SubCharts
-├── templates     # Components
-│   ├── deployment.yaml
-│   ├── ingress.yaml
-│   └── service.yaml
-└── values.yaml   # environment values
+foo/
+├── .helmignore   # Contains patterns to ignore when packaging Helm charts.
+├── Chart.yaml    # Information about your chart
+├── values.yaml   # The default values for your templates
+├── charts/       # Charts that this chart depends on
+└── templates/    # The template files
+    └── tests/    # The test files
 ```
 
 ## Helm Chart Template Guide
