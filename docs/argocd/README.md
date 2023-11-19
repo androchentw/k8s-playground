@@ -70,7 +70,7 @@ kubectl -n argocd delete secret argocd-initial-admin-secret
 
 ## Deploying a Sample App
 
-* Check [src/nginx-helloworld/](../src/nginx-helloworld/)
+* Check [src/nginx-helloworld/](../../src/nginx-helloworld/)
   * [Run a Stateless Application Using a Deployment](https://kubernetes.io/docs/tasks/run-application/run-stateless-application-deployment/)
 * Settings > Repositories > Connect Repo > VIA HTTPS
   * Project: default
@@ -137,7 +137,14 @@ minikube service nginx-service -n helloworld
 # |------------|---------------|-------------|------------------------|
 # | helloworld | nginx-service |             | http://127.0.0.1:49204 |
 # |------------|---------------|-------------|------------------------|
+
+# nginx at: http://127.0.0.1:49204 
 ```
+
+<img style="width:70%;" src="https://github.com/androchentw/k8s-playground/blob/main/docs/argocd/argocd-nginx-helloworld.png?raw=true">
+<p align="center"><sub><sup>
+  <a href="https://github.com/androchentw/k8s-playground/blob/main/src/nginx-hellowold" target="_blank" rel="noreferrer noopenner">ArgoCD - nginx-hellowold</a>
+</sup></sub></p>
 
 Ref:
 
