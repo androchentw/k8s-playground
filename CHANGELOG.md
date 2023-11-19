@@ -2,6 +2,15 @@
 
 ## [Unreleased]
 
+TODO 2023-11-19
+
+1. Observability
+   1. loki
+   2. tempo / jaeger
+   3. odigos
+2. ConfigMap
+3. Vault
+
 ## [v0.2.0] - 2023-11-19
 
 ### Features

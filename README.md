@@ -15,16 +15,6 @@
 3. [Observability: Grafana + Prometheus + Loki + Jaegar](docs/observability/README.md)
 4. [Secret Management: External Secrets Operator + HashiCorp Vault](docs/secret-management/README.md)
 
-TODO 2023-11-19
-
-1. Observability
-   1. loki
-   2. tempo / jaeger
-   3. odigos
-2. ConfigMap
-3. Vault
-4. FastAPI sample
-
 ## Ref
 
 1. <https://github.com/hivenetes/k8s-bootstrapper>
