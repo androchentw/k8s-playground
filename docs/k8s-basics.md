@@ -1,6 +1,7 @@
 # k8s basics
 
 * [Tutorial: Learn Kubernetes Basics](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
+* Check [minikube/README.md](minikube/README.md) for more information about setup and sample code.
 
 ## Basics: Cluster, Master Node, Worker Node, Pod
 
@@ -105,6 +106,18 @@ Ref:
 * [DAY18 — 了解 K8s 中的 Pod、Service、Deployment](https://medium.com/%E9%AB%92%E6%A1%B6%E5%AD%90/day18-%E4%BA%86%E8%A7%A3-k8s-%E4%B8%AD%E7%9A%84-pod-service-deployment-92408f9244e1)
 * [k8s中几个基本概念的理解，pod,service,deployment,ingress的使用场景](https://www.cnblogs.com/ricklz/p/16684420.html)
 
+## Labels & Selectors
+
+<img style="width:50%;" src="https://assets-global.website-files.com/61c02e339c11997e6926e3d9/61c093a693fd42c2d52eb62a_602c569e5e6e7537bc35799a_TYU0FzP808wO7i21lCVLrwNQHDid7p-DEEKPX7y61O4Yqe17MWvMU4gVS6ZcSWYEz0jbwQ6LSCRv4rw5zsKH-6CBYn95EDvZ5Sh4BprrkBx821ylBC85xb710oIBfirSbxtjzFs.png">
+<p align="center"><sub><sup>
+  <a href="https://www.datree.io/resources/a-kubernetes-guide-for-labels-and-selectors" target="_blank" rel="noreferrer noopenner">Labels & Selectors</a>
+</sup></sub></p>
+
+With labels, Kubernetes is able to glue resources together when one resource needs to relate or manage another resource. For example: a Deployment that needs to know how many Pods to spin-up or a Service that needs to expose some Pods.
+
+* Labels: Labels are nothing more than custom key-value pairs that are attached to objects and are used to describe and manage different Kubernetes resources.
+* Selectors: A label selector is just a fancy name of the mechanism that enables the client/user to target (select) a set of objects by their labels.
+
 ## Configuration: ConfigMap
 
 <img style="width:50%;" src="https://images.contentstack.io/v3/assets/blt300387d93dabf50e/blt7118bc80b8cd018a/62f50128d3b8a57004568c03/ConfigMap_Diagram.jpg">
@@ -129,6 +142,24 @@ TODO Ref
 </sup></sub></p>
 
 ## pvc: PersistentVolumeClaims
+
+## DaemonSet
+
+<img style="width:60%;" src="https://www.bluematador.com/hs-fs/hubfs/blog/new/An%20Introduction%20to%20Kubernetes%20DaemonSets/DaemonSets.png?width=1540&name=DaemonSets.png">
+<p align="center"><sub><sup>
+  <a href="https://www.bluematador.com/blog/an-introduction-to-kubernetes-daemonsets" target="_blank" rel="noreferrer noopenner">An introduction to Kubernetes DaemonSets</a>
+</sup></sub></p>
+
+A Kubernetes DaemonSet is a container tool that ensures that all nodes (or a specific subset of them) are running exactly one copy of a pod.
+
+When using Kubernetes, most of the time you don't care where your pods are running, but sometimes you want to run a single pod on all your nodes. For example, you might want to run fluentd on all your nodes to collect logs. In this case, using a DaemonSet tells Kubernetes to make sure there is one instance of the pod on nodes in your cluster.
+
+## Others
+
+* [A Practical Guide to Setting Kubernetes Requests and Limits](https://blog.kubecost.com/blog/requests-and-limits/)
+* [Kubernetes : Pod scheduling/eviction relationship with requests/limits](https://stackoverflow.com/questions/60790213/kubernetes-pod-scheduling-eviction-relationship-with-requests-limits)
+* [Understanding Kubernetes Evicted Pods](https://sysdig.com/blog/kubernetes-pod-evicted/)
+* [Health Check & Self Healing - K8s Probes - Liveness, Readiness, Startup Examples | Devops Junction](https://www.middlewareinventory.com/blog/k8s-probes-liveness-readiness-startup-examples-devops-junction/)
 
 ## Helm Chart
 

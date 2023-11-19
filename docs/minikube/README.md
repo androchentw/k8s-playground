@@ -1,7 +1,7 @@
 # Minikube
 
-Minikube on MacOS M2 + zsh.
-Ref [k8s-basics.md](../k8s-basics.md) for details.
+* Run Minikube on MacOS M2 + zsh.
+* Check [k8s-basics.md](../k8s-basics.md) for more information about k8s core concepts.
 
 ## Setup minikube
 
