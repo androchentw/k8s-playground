@@ -3,6 +3,17 @@
 * Run Minikube on MacOS M2 + zsh.
 * Check [k8s-basics.md](../k8s-basics.md) for more information about k8s core concepts.
 
+## Endpoints Summary
+
+```sh
+# http://localhost:7080/
+minikube service hello-minikube
+kubectl port-forward service/hello-minikube 7080:8080
+
+minikube dashboard
+# 🎉  Opening http://127.0.0.1:51298/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/ in your default browser...
+```
+
 ## Setup minikube
 
 The concise version of command is aggregated at [demo-minikube-start.sh](demo-minikube-start.sh)

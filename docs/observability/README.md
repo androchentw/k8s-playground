@@ -1,7 +1,6 @@
 # Observability
 
 * Grafana/Odigos + Prometheus + Loki + Jaeger/Tempo
-
 * Helm chart
   * prometheus-operator/kube-prometheus-stack
   * grafana/loki
@@ -13,6 +12,29 @@ Ref
 
 * [k8s-cluster-bootstrapPublic](https://github.com/LeoVS09/k8s-cluster-bootstrap)
 * [Service Mesh for Developers, Part 1: Exploring the Power of Observability and OpenTelemetry](https://www.solo.io/blog/service-mesh-for-developers-exploring-the-power-of-observability-and-opentelemetry/)
+
+## Endpoints Summary
+
+```sh
+# Prometheus: http://localhost:9090
+kubectl port-forward service/kube-prometheus-stack-prometheus 9090:9090 -n prometheus
+
+# Grafana: http://localhost:3000, admin/prom-operator
+# if conflict with odigos, change to 3001
+kubectl port-forward service/kube-prometheus-stack-grafana 3000:80 -n prometheus
+
+# Alert Manager: http://localhost:9093
+kubectl port-forward service/kube-prometheus-stack-alertmanager 9093:9093 -n prometheus
+
+# Loki: http://localhost:3100
+kubectl port-forward service/loki 3100:3100 -n loki
+
+# Jaeger: http://localhost:16686
+kubectl port-forward -n tracing svc/jaeger 16686:16686
+
+# Odigos: http://localhost:3000
+odigos ui
+```
 
 ## Visualization: Grafana + Metrics: Prometheus
 
@@ -79,10 +101,10 @@ kubectl get all -n prometheus
 # Prometheus: http://localhost:9090
 kubectl port-forward service/kube-prometheus-stack-prometheus 9090:9090 -n prometheus
 
-# Grafana http://localhost:3000, admin/prom-operator
+# Grafana: http://localhost:3000, admin/prom-operator
 kubectl port-forward service/kube-prometheus-stack-grafana 3000:80 -n prometheus
 
-# Alert Manager http://localhost:9093
+# Alert Manager: http://localhost:9093
 kubectl port-forward service/kube-prometheus-stack-alertmanager 9093:9093 -n prometheus
 ```
 
@@ -152,8 +174,8 @@ kubectl get all -n loki
 # NAME                    READY   AGE
 # statefulset.apps/loki   1/1     3m30s
 
+# Loki: http://localhost:3100 
 kubectl port-forward service/loki 3100:3100 -n loki
-# http://localhost:3100 
 # Configure grafana http://localhost:3000
 # Connections > Data sources > Add data source: Loki, URL: http://localhost:3100 
 ```
@@ -218,8 +240,9 @@ helm upgrade --install promtail grafana/promtail -n logging
 ```sh
 brew install keyval-dev/homebrew-odigos-cli/odigos
 odigos install
+
+# Odigos: http://localhost:3000
 odigos ui
-# http://localhost:3000
 ```
 
 ### Introduction
@@ -239,10 +262,8 @@ kubectl apply -f https://raw.githubusercontent.com/keyval-dev/opentelemetry-go-i
 # helm repo add jaegertracing https://jaegertracing.github.io/helm-charts
 # helm install jaeger jaegertracing/jaeger
 
-# http://jaeger.tracing:4317
-
+# Jaeger: http://localhost:16686
 kubectl port-forward -n tracing svc/jaeger 16686:16686
-# http://localhost:16686
 ```
 
 Ref

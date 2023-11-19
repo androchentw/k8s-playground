@@ -2,6 +2,11 @@
 
 * Secret Management: External Secrets Operator + HashiCorp Vault
 
+## Endpoints Summary
+
+```sh
+```
+
 ## Vault
 
 <img style="width:100%;" src="https://developer.hashicorp.com/_next/image?url=https%3A%2F%2Fcontent.hashicorp.com%2Fapi%2Fassets%3Fproduct%3Dtutorials%26version%3Dmain%26asset%3Dpublic%252Fimg%252Fvault%252Fdiagram-kubernetes_auth-workflow.png%26width%3D3300%26height%3D2550&w=3840&q=75">

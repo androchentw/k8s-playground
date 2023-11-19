@@ -9,6 +9,13 @@ Ref
 * [Setting up Argo CD with Helm](https://www.arthurkoziel.com/setting-up-argocd-with-helm/)
 * [GitOps (ArgoCD)](https://picluster.ricsanfre.com/docs/argocd/)
 
+## Endpoints Summary
+
+```sh
+# ArgoCD: http://localhost:8080
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+```
+
 ## Introduction
 
 <img style="width:50%;" src="https://argo-cd.readthedocs.io/en/stable/assets/argocd_architecture.png">
@@ -56,8 +63,8 @@ helm install argocd argo/argo-cd --create-namespace --namespace argocd
 kubectl get all -n argocd
 
 # Expose the ArgoCD API Server
+# ArgoCD: http://localhost:8080
 kubectl port-forward svc/argocd-server -n argocd 8080:443
-# localhost:8080
 
 # Get the admin password
 # username: admin
