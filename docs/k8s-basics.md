@@ -102,6 +102,11 @@ Ref:
 
 ## Configuration: ConfigMap
 
+<img style="width:50%;" src="https://images.contentstack.io/v3/assets/blt300387d93dabf50e/blt7118bc80b8cd018a/62f50128d3b8a57004568c03/ConfigMap_Diagram.jpg">
+<p align="center"><sub><sup>
+  <a href="https://www.weave.works/blog/kubernetes-configmap" target="_blank" rel="noreferrer noopenner">ConfigMap</a>
+</sup></sub></p>
+
 TODO Ref
 
 * [Managing Resources](https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/)
@@ -146,6 +151,18 @@ brew install kubernetes-helm
 
 * [Helm Chart Template Guide](https://helm.sh/docs/chart_template_guide/getting_started/)
 * [Helm - Templating variables in values.yaml](https://stackoverflow.com/questions/55958507/helm-templating-variables-in-values-yaml)
+
+[https://humalect.com/blog/kustomize-vs-helm#when-to-use-helm-vs-kustomize](https://humalect.com/blog/kustomize-vs-helm#when-to-use-helm-vs-kustomize)
+
+### [Combine Helm and Kustomize Deployments](https://humalect.com/blog/kustomize-vs-helm#when-to-use-helm-vs-kustomize)
+
+* kustomize
+  * Customizing Manifests**
+  * Multi-Environment Management**
+* helm
+  * Packaging Complex Applications**
+  * Managing Releases**
+  * Centralized Configuration**
 
 Ref
 
