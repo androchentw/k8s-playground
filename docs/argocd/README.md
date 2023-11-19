@@ -143,7 +143,7 @@ minikube service nginx-service -n helloworld
 
 <img style="width:70%;" src="https://github.com/androchentw/k8s-playground/blob/main/docs/argocd/argocd-nginx-helloworld.png?raw=true">
 <p align="center"><sub><sup>
-  <a href="https://github.com/androchentw/k8s-playground/blob/main/src/nginx-hellowold" target="_blank" rel="noreferrer noopenner">ArgoCD - nginx-hellowold</a>
+  <a href="https://github.com/androchentw/k8s-playground/blob/main/src/nginx-hellowold" target="_blank" rel="noreferrer noopenner">ArgoCD - nginx-helloworld</a>
 </sup></sub></p>
 
 Ref:

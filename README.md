@@ -13,7 +13,7 @@
 1. [Minikube on MacOS M2](docs/minikube/README.md)
 2. [GitOps: ArgoCD](docs/argocd/README.md)
 3. [Observability: Grafana + Prometheus + Loki + Jaegar](docs/observability/README.md)
-4. [Secret Management: External Secrets Operator + HashiCorp Vault](docs/secret/secret-management.md)
+4. [Secret Management: External Secrets Operator + HashiCorp Vault](docs/secret-management/README.md)
 
 ## Ref
 
