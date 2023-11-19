@@ -1,0 +1,19 @@
+# https://grafana.com/docs/loki/latest/setup/install/helm/install-scalable/
+# https://grafana.com/docs/loki/latest/setup/install/helm/configure-storage/
+minio:
+  enabled: true
+
+# loki:
+#   storage:
+#     bucketNames:
+#       chunks: chunks
+#       ruler: ruler
+#       admin: admin
+#     type: s3
+#     s3:
+#       endpoint: <endpoint>
+#       region: <region>
+#       accessKeyId: <minio key ID>
+#       secretAccessKey: <minio access keysecret>
+#       s3ForcePathStyle: false
+#       insecure: false
