@@ -22,3 +22,4 @@
 Ref
 
 * <https://chechia.net/zh-hant/slides/2023-10-25-k8s-resource-as-code/>
+* [Vault installation to minikube via Helm with TLS enabled](https://developer.hashicorp.com/vault/tutorials/kubernetes/kubernetes-minikube-tls)

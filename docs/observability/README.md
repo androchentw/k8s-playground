@@ -12,6 +12,7 @@ Ref
 
 * [k8s-cluster-bootstrapPublic](https://github.com/LeoVS09/k8s-cluster-bootstrap)
 * [Service Mesh for Developers, Part 1: Exploring the Power of Observability and OpenTelemetry](https://www.solo.io/blog/service-mesh-for-developers-exploring-the-power-of-observability-and-opentelemetry/)
+* [在 K8s 上實現全棧監控](https://toleadafulfillinglife.com/full-stack-monitoring-for-kubernetes/)
 
 ## Endpoints Summary
 
