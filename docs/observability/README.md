@@ -231,6 +231,15 @@ helm upgrade --install promtail grafana/promtail -n logging
 
 ## Traces: Jaeger/Tempo
 
+### Jaeger
+
+* [Implement distributed tracing with Jaeger & Opentelemetry on Kubernetes](https://medium.com/@akashjoffical08/implement-distributed-tracing-with-jaeger-opentelemetry-on-kubernetes-3e35cb77b536)
+* [Operator for Kubernetes](https://www.jaegertracing.io/docs/1.51/operator/#understanding-operators)
+
+### Tempo
+
+* [可觀測性宇宙的第二十六天 - Grafana Tempo 實戰](https://ithelp.ithome.com.tw/articles/10338074)
+
 ## Visualization: Odigos
 
 * [Odigos - Quickstart](https://docs.odigos.io/intro)
