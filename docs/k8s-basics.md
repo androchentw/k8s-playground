@@ -118,22 +118,6 @@ With labels, Kubernetes is able to glue resources together when one resource nee
 * Labels: Labels are nothing more than custom key-value pairs that are attached to objects and are used to describe and manage different Kubernetes resources.
 * Selectors: A label selector is just a fancy name of the mechanism that enables the client/user to target (select) a set of objects by their labels.
 
-## Configuration: ConfigMap
-
-<img style="width:50%;" src="https://images.contentstack.io/v3/assets/blt300387d93dabf50e/blt7118bc80b8cd018a/62f50128d3b8a57004568c03/ConfigMap_Diagram.jpg">
-<p align="center"><sub><sup>
-  <a href="https://www.weave.works/blog/kubernetes-configmap" target="_blank" rel="noreferrer noopenner">ConfigMap</a>
-</sup></sub></p>
-
-TODO Ref
-
-* [Managing Resources](https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/)
-  * [Configuring Redis using a ConfigMap](https://kubernetes.io/docs/tutorials/configuration/configure-redis-using-configmap/)
-* <https://humanitec.com/blog/handling-environment-variables-with-kubernetes#using-kubernetes-variables>
-  * <https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/>
-  * <https://www.kisphp.com/kubernetes-manifests/configmap>
-  * <https://earthly.dev/blog/kubernetes-config-maps/>
-
 ## sts: StatefulSet
 
 <img style="width:60%;" src="https://loft.sh/images/blog/posts/stateful-set-bp-2.png?nf_resize=fit&w=1040">
@@ -160,3 +144,9 @@ When using Kubernetes, most of the time you don't care where your pods are runni
 * [Kubernetes : Pod scheduling/eviction relationship with requests/limits](https://stackoverflow.com/questions/60790213/kubernetes-pod-scheduling-eviction-relationship-with-requests-limits)
 * [Understanding Kubernetes Evicted Pods](https://sysdig.com/blog/kubernetes-pod-evicted/)
 * [Health Check & Self Healing - K8s Probes - Liveness, Readiness, Startup Examples | Devops Junction](https://www.middlewareinventory.com/blog/k8s-probes-liveness-readiness-startup-examples-devops-junction/)
+
+## Configuration Best Practices
+
+[Configuration Best Practices](https://kubernetes.io/docs/concepts/configuration/overview/)
+
+* Group related objects into a single file whenever it makes sense. One file is often easier to manage than several. See the [guestbook-all-in-one.yaml](https://github.com/kubernetes/examples/blob/master/guestbook/all-in-one/guestbook-all-in-one.yaml) file as an example of this syntax.
