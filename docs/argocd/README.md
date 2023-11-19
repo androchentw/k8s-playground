@@ -159,3 +159,4 @@ Ref
 * [Installing ArgoCD on Minikube and deploying a test application](https://medium.com/@mehmetodabashi/installing-argocd-on-minikube-and-deploying-a-test-application-caa68ec55fbf)
 * [Tutorial: Using ArgoCD with Helm Charts](https://www.env0.com/blog/argocd-with-helm-charts)
 * [Setting up Argo CD with Helm](https://www.arthurkoziel.com/setting-up-argocd-with-helm/)
+* [使用 DroneCI 與 ArgoCD 實現 K8s 自動整合部署](https://minghsu.io/posts/droneci-argocd/)

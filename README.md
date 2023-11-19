@@ -18,14 +18,8 @@
 ## Ref
 
 1. <https://github.com/hivenetes/k8s-bootstrapper>
-2. [使用 DroneCI 與 ArgoCD 實現 K8s 自動整合部署](https://minghsu.io/posts/droneci-argocd/)
-3. <https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/#install-with-homebrew-on-macos>
-4. <https://github.com/tomhuang12/awesome-k8s-resources>
-5. <https://github.com/digitalocean/Kubernetes-Starter-Kit-Developers>
-
-## k8s bootstrap
-
-* <https://github.com/hivenetes/k8s-bootstrapper>
+2. <https://github.com/tomhuang12/awesome-k8s-resources>
+3. <https://github.com/digitalocean/Kubernetes-Starter-Kit-Developers>
 
 ## Contribute
 

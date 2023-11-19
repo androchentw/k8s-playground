@@ -8,9 +8,10 @@ Ref [k8s-basics.md](../k8s-basics.md) for details.
 The concise version of command is aggregated at [demo-minikube-start.sh](demo-minikube-start.sh)
 
 * [minikube start](https://minikube.sigs.k8s.io/docs/start/)
+* [Install and Set Up kubectl on macOS](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/#install-with-homebrew-on-macos)
+* [Macbook 開發環境設定大全](https://blog.androchen.tw/macbook-setup/)
 * [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 * [Startup Local Kubernetes via Minikube](https://fufu.gitbook.io/kk8s/startup-kubernetes-via-minikube)
-* [Macbook 開發環境設定大全](https://blog.androchen.tw/macbook-setup/)
 
 ```sh
 brew install --cask docker
