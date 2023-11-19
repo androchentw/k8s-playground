@@ -1,4 +1,4 @@
-# Template Playground
+# k8s Playground
 
 * Learn k8s 101 and build bootstrap
 
