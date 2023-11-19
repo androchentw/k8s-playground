@@ -80,6 +80,11 @@ Ref:
 
 ### Deployment
 
+<img style="width:60%;" src="https://storage.googleapis.com/cdn.thenewstack.io/media/2017/11/07751442-deployment.png">
+<p align="center"><sub><sup>
+  <a href="https://thenewstack.io/kubernetes-deployments-work" target="_blank" rel="noreferrer noopenner">ReplicaSet</a>
+</sup></sub></p>
+
 * scale out pods
 * `spec.replicas`
 
@@ -117,6 +122,11 @@ TODO Ref
   * <https://earthly.dev/blog/kubernetes-config-maps/>
 
 ## sts: StatefulSet
+
+<img style="width:60%;" src="https://loft.sh/images/blog/posts/stateful-set-bp-2.png?nf_resize=fit&w=1040">
+<p align="center"><sub><sup>
+  <a href="https://loft.sh/blog/kubernetes-statefulset-examples-and-best-practices/" target="_blank" rel="noreferrer noopenner">Kubernetes StatefulSet - Examples & Best Practices</a>
+</sup></sub></p>
 
 ## pvc: PersistentVolumeClaims
 
@@ -157,12 +167,12 @@ brew install kubernetes-helm
 ### [Combine Helm and Kustomize Deployments](https://humalect.com/blog/kustomize-vs-helm#when-to-use-helm-vs-kustomize)
 
 * kustomize
-  * Customizing Manifests**
-  * Multi-Environment Management**
+  * Customizing Manifests
+  * Multi-Environment Management
 * helm
-  * Packaging Complex Applications**
-  * Managing Releases**
-  * Centralized Configuration**
+  * Packaging Complex Applications
+  * Managing Releases
+  * Centralized Configuration
 
 Ref
 
