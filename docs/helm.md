@@ -25,12 +25,23 @@ foo/
     └── tests/    # The test files
 ```
 
-## Helm Chart Template Guide
+## Sample
 
-* [Helm Chart Template Guide](https://helm.sh/docs/chart_template_guide/getting_started/)
+* [Helm Chart Template Guide - Getting Started](https://helm.sh/docs/chart_template_guide/getting_started/)
+
+```sh
+helm create mychart
+# Creating mychart
+
+rm -rf mychart/templates/*
+```
+
+Ref
+
+* [Kubernetes 基礎教學（三）Helm 介紹與建立 Chart](https://chengweihu.com/kubernetes-tutorial-3-helm/)
+* [DAY20 — 利用 Helm 把 K8s 元件都包裝起來吧！](https://github.com/superj80820/2020-ithelp-contest/tree/master/DAY20)
+* [Helm v3 使用簡介](https://godleon.github.io/blog/DevOps/Helm-v3-Chart-Template-Guide/)
 * [Helm - Templating variables in values.yaml](https://stackoverflow.com/questions/55958507/helm-templating-variables-in-values-yaml)
-
-[https://humalect.com/blog/kustomize-vs-helm#when-to-use-helm-vs-kustomize](https://humalect.com/blog/kustomize-vs-helm#when-to-use-helm-vs-kustomize)
 
 ## [Combine Helm and Kustomize Deployments](https://humalect.com/blog/kustomize-vs-helm#when-to-use-helm-vs-kustomize)
 
@@ -41,8 +52,3 @@ foo/
   * Packaging Complex Applications
   * Managing Releases
   * Centralized Configuration
-
-Ref
-
-* [Kubernetes 基礎教學（三）Helm 介紹與建立 Chart](https://chengweihu.com/kubernetes-tutorial-3-helm/)
-* [DAY20 — 利用 Helm 把 K8s 元件都包裝起來吧！](https://github.com/superj80820/2020-ithelp-contest/tree/master/DAY20)
