@@ -73,6 +73,8 @@ Ref:
 
 ### Service
 
+Check [service](service/) for detailed information.
+
 * Expose your pods for outside to reach
   * ClusterIP, NodePort, LoadBalancer, ExternalName
 * 定義「一群 Pod 要如何被連線及存取」的元件
