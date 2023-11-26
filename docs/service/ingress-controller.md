@@ -62,3 +62,4 @@ spec:
 * [Kubernetes 那些事 — Ingress 篇(二)](https://medium.com/andy-blog/kubernetes-那些事-ingress-篇-二-559c7a41404b)
 * [Kubernetes Ingress 實戰](https://tsunghsien.gitbooks.io/kubenetes/content/ingresspei-zhi.html)
 * [服务发现与负载均衡](https://jimmysong.io/kubernetes-handbook/practice/service-discovery-and-loadbalancing.html)
+* [Kubernetes Documentation - Services, Load Balancing, and Networking](https://kubernetes.io/docs/concepts/services-networking/): Service, Ingress, Ingress Controllers

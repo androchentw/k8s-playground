@@ -60,3 +60,4 @@ Service
 * [雲端容器化技術與資源調度](https://www.profyu.com/course/cloud-container-k8s-service.html)
 * [服务发现与负载均衡](https://jimmysong.io/kubernetes-handbook/practice/service-discovery-and-loadbalancing.html)
 * [微服務基礎建設 - Service Discovery](https://columns.chicken-house.net/2017/12/31/microservice9-servicediscovery/)
+* [Kubernetes Documentation: Virtual IPs and Service Proxies](https://kubernetes.io/docs/reference/networking/virtual-ips/)
