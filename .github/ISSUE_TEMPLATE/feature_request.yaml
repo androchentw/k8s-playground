@@ -10,7 +10,7 @@ body:
     attributes:
       label: "Start Date"
       description: Start of development
-      placeholder: "month/day/year"
+      placeholder: "year-month-day"
     validations:
       required: false
   - type: textarea
