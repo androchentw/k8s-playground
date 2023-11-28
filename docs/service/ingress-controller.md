@@ -11,6 +11,8 @@
 * Reverse proxy
 * Load balance
 * Nginx
+* API Gateway
+* Service Type: Ingress
 * TLS, SSL, Certificate
 
 ## k8s Load Balance Type
@@ -37,7 +39,7 @@ kubectl exec -ti -n ingress-nginx PodName -- /bin/sh
 cat nginx.conf
 ```
 
-sample app
+sample ingress app
 
 ```yaml
 apiVersion: extensions/v1beta1
@@ -54,6 +56,45 @@ spec:
           serviceName: app
           servicePort: 8080
 ```
+
+## Rewrite-Target
+
+```sh
+curl https://rewrite.bar.com/something/new
+```
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+  name: rewrite
+  namespace: default
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: rewrite.bar.com
+    http:
+      paths:
+      - path: /something(/|$)(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: http-svc
+            port: 
+              number: 80
+```
+
+* [ingress-nginx/docs/examples/rewrite/README.md](https://github.com/kubernetes/ingress-nginx/blob/main/docs/examples/rewrite/README.md)
+* [Ingress高级用法](https://help.aliyun.com/zh/ack/serverless-kubernetes/user-guide/advanced-ingress-configurations)
+
+## Ingress mTLS
+
+## API Gateway
+
+* [nginx - API Gateway](https://www.nginx.com/learn/api-gateway/)
 
 ## Ref
 
