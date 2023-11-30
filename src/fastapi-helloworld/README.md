@@ -26,6 +26,10 @@ docker build -t fastapi-helloworld:latest .
 docker run -d --name fastapi-helloworld -p 80:80 fastapi-helloworld:latest
 # Endpoint: http://localhost:80/items/5?q=somequery
 # API Doc: http://localhost:80/docs
+
+# Run3: docker-compose
+docker-compose up --build
+# docker-compose down
 ```
 
 Ref

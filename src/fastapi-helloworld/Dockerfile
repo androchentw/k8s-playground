@@ -1,11 +1,14 @@
-FROM python:3.9
+FROM python:3.11-slim
 
-WORKDIR /code
+ARG USER=appuser
+ARG HOME=/home/$USER
 
-COPY ./requirements.txt /code/requirements.txt
+WORKDIR $HOME
 
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+COPY ./requirements.txt "$HOME/requirements.txt"
 
-COPY ./app /code/app
+RUN pip install --no-cache-dir --upgrade -r "$HOME/requirements.txt"
+
+COPY ./app $HOME/app
 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
