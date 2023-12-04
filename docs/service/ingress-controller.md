@@ -96,6 +96,11 @@ spec:
 
 * [nginx - API Gateway](https://www.nginx.com/learn/api-gateway/)
 
+<img style="width:70%;" src="https://github.com/androchentw/k8s-playground/blob/main/docs/service/lb-proxy-apigw.gif?raw=true">
+<p align="center"><sub><sup>
+  Load balance, proxy, API Gateway. Credit: Usama Shafique shared on LinkedIn Post
+</sup></sub></p>
+
 ## Ref
 
 * [為 k8s 加上 Ingress Controller 來接收外部請求](https://luthertsai.com/kubernetes-notes-ingress-controller-setup/)
