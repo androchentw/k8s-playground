@@ -1,4 +1,10 @@
-# Vault
+# Vault k8s
+
+## Overview
+
+* [Kubernetes auth method](https://developer.hashicorp.com/vault/docs/auth/kubernetes)
+* [Vault Secret Operator](https://developer.hashicorp.com/vault/docs/platform/k8s/vso)
+  * [The Vault Secrets Operator on Kubernetes](https://developer.hashicorp.com/vault/tutorials/kubernetes/vault-secrets-operator)
 
 ## Setup
 
@@ -249,8 +255,16 @@ postgresql://db-readonly-username:db-secret-password@postgres:5432/wizard
 
 ## Ref
 
-* [Vault on Kubernetes: Helm Chart](https://developer.hashicorp.com/vault/docs/platform/k8s/helm)
-* [Run Vault on kubernetes](https://developer.hashicorp.com/vault/docs/platform/k8s/helm/run)
-* <https://raw.githubusercontent.com/hashicorp/vault-helm/master/values.yaml>
+* [Hashicorp Vault for Kubernetes](https://slides.com/chechiachang/terraform-introduction-a56697#/4/3)
+  * [DevOpsDay: HashiCorp Vault 自建金鑰管理最佳入坑姿勢](https://chechia.net/zh-hant/talk/devopsday-hashicorp-vault-%E8%87%AA%E5%BB%BA%E9%87%91%E9%91%B0%E7%AE%A1%E7%90%86%E6%9C%80%E4%BD%B3%E5%85%A5%E5%9D%91%E5%A7%BF%E5%8B%A2/)
+  * [Kubernetes Summit: Resource as Code for Kubernetes: Stop kubectl apply](https://chechia.net/zh-hant/talk/kubernetes-summit-resource-as-code-for-kubernetes-stop-kubectl-apply/)
+* [Vault 與 Kubernetes 的深度整合](https://blog.amis.com/vault-kubernetes-integration-63ce46d47550)
+* Hashicorp Vault Official
+  * [Vault on Kubernetes: Helm Chart](https://developer.hashicorp.com/vault/docs/platform/k8s/helm)
+  * [Run Vault on kubernetes](https://developer.hashicorp.com/vault/docs/platform/k8s/helm/run)
+  * [Vault installation to minikube via Helm with TLS enabled](https://developer.hashicorp.com/vault/tutorials/kubernetes/kubernetes-minikube-tls)
+  * [vault-helm/master/values.yaml](https://raw.githubusercontent.com/hashicorp/vault-helm/master/values.yaml)
 * [Deploying High Available Vault on Kubernetes using Helm](https://floatingpoint.sorint.it/blog/post/deploying-high-available-vault-on-kubernetes-using-helm)
 * [Vault Installation to Minikube via Helm with Integrated Storage](https://mycloudjourney.medium.com/vault-installation-to-minikube-via-helm-with-integrated-storage-15c9d1a907e6)
+* [Using Vault Secrets Operator in Kubernetes](https://medium.com/@yurysavenko/using-vault-secrets-operator-in-kubernetes-afba5ccf44f1)
+* [Setup HashiCorp Vault on docker](https://gist.github.com/Mishco/b47b341f852c5934cf736870f0b5da81)
