@@ -1,5 +1,7 @@
 # k8s Playground
 
+<img src="https://img.shields.io/badge/License-MIT-blue.svg" />
+
 * Learn k8s 101 and build bootstrap
 
 <p align="center">
